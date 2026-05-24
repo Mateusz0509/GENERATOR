@@ -31,7 +31,7 @@ function update(){
   els('previewLetterText').textContent = els('description').value;
 }
 ['docType','docNumber','issueDate','place','dueDate','senderName','senderNip','senderAddress','clientName','clientNip','clientAddress','title','description','amount','iban','transferTitle','notes'].forEach(id => els(id).addEventListener('input', update));
-els('printBtn').addEventListener('click', () => window.print());
+els('printBtn').addEventListener('click', () => { window.focus(); window.print(); });
 els('resetBtn').addEventListener('click', () => location.reload());
 const today = new Date();
 els('issueDate').value = today.toISOString().slice(0,10);

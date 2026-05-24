@@ -8,9 +8,9 @@
 </head>
 <body>
   <div class="app">
-    <aside class="panel">
+    <aside class="panel no-print">
       <h1>Generator dokumentów</h1>
-      <p>Osobne szablony: faktura, umowa, wezwanie do zapłaty i pismo firmowe.</p>
+      <p>Szablony zoptymalizowane pod A4 i PDF w Chrome.</p>
       <label>Typ dokumentu
         <select id="docType">
           <option value="invoice">Faktura</option>
@@ -83,11 +83,10 @@
               <tr><td>Usługa / towar</td><td>1</td><td id="previewAmountCell">0.00 zł</td><td id="previewAmountTotal">0.00 zł</td></tr>
             </tbody>
           </table>
-          <p class="muted">Dokument sprzedażowy z wyraźnym podsumowaniem kwoty.</p>
         </div>
         <div class="box hidden" id="contractSection">
           <h3>Umowa</h3>
-          <p>Strony zawierają umowę na warunkach opisanych poniżej. Dokument obejmuje przedmiot umowy, kwotę, termin i podpisy.</p>
+          <p>Strony zawierają umowę na warunkach opisanych poniżej.</p>
           <ul class="compact-list">
             <li><strong>Przedmiot:</strong> <span id="contractSubject">Wykonanie usługi</span></li>
             <li><strong>Wynagrodzenie:</strong> <span id="contractAmount">0.00 zł</span></li>
@@ -101,7 +100,6 @@
           <p><strong>Termin:</strong> <span id="previewDueDate"></span></p>
           <p><strong>Konto:</strong> <span id="previewIban"></span></p>
           <p><strong>Tytuł przelewu:</strong> <span id="previewTransferTitle"></span></p>
-          <p class="muted">Wezwanie zawiera dane stron, podstawę roszczenia i termin zapłaty.</p>
         </div>
         <div class="box hidden" id="letterSection">
           <h3>Pismo firmowe</h3>
