@@ -3,14 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Generator dokumentów</title>
+  <title>Generator dokumentów PDF</title>
   <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
 <body>
-  <div class="app">
+  <div class="app no-pdf">
     <aside class="panel no-print">
       <h1>Generator dokumentów</h1>
-      <p>Szablony zoptymalizowane pod A4 i PDF w Chrome.</p>
+      <p>Jednym przyciskiem pobierzesz PDF bez okna drukowania.</p>
       <label>Typ dokumentu
         <select id="docType">
           <option value="invoice">Faktura</option>
@@ -47,8 +48,8 @@
       <label>Tytuł przelewu<input id="transferTitle" value="Płatność za zamówienie" /></label>
       <label>Uwagi<textarea id="notes" rows="4">Dziękujemy za współpracę.</textarea></label>
       <div class="actions">
-        <button id="printBtn">Drukuj / PDF</button>
-        <button id="resetBtn" class="secondary">Reset</button>
+        <button id="pdfBtn">Pobierz PDF</button>
+        <button id="printBtn" class="secondary">Drukuj</button>
       </div>
     </aside>
     <main class="previewWrap">

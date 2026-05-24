@@ -32,6 +32,11 @@ function update(){
 }
 ['docType','docNumber','issueDate','place','dueDate','senderName','senderNip','senderAddress','clientName','clientNip','clientAddress','title','description','amount','iban','transferTitle','notes'].forEach(id => els(id).addEventListener('input', update));
 els('printBtn').addEventListener('click', () => { window.focus(); window.print(); });
+els('pdfBtn').addEventListener('click', async () => {
+  const element = document.getElementById('documentPreview');
+  const opt = { margin: 0, filename: 'dokument.pdf', image: { type: 'jpeg', quality: 0.98 }, html2canvas: { scale: 2, useCORS: true, backgroundColor: '#ffffff' }, jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' } };
+  await html2pdf().set(opt).from(element).save();
+});
 els('resetBtn').addEventListener('click', () => location.reload());
 const today = new Date();
 els('issueDate').value = today.toISOString().slice(0,10);
